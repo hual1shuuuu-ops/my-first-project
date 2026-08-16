@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN" data-theme="light" data-trae-theme="dark"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8886,12 +8886,25 @@ body:not(.home-page-visible) > footer.footer .footer-top {
   font-size: 16px;
 }
 #page-tech-acv .acv-architecture-visual {
+  position: relative;
   width: 100%;
   height: auto;
   margin: 0;
   display: flex;
   flex-direction: column;
   gap: 28px;
+  counter-reset: acv-layer;
+}
+#page-tech-acv .acv-architecture-visual::before {
+  content: '';
+  position: absolute;
+  inset: -34px -28px;
+  z-index: 0;
+  border: 1px solid rgba(126,165,228,.16);
+  border-radius: 24px;
+  background: linear-gradient(145deg, rgba(255,255,255,.62), rgba(238,245,255,.28));
+  box-shadow: 0 32px 80px rgba(42,87,157,.08);
+  pointer-events: none;
 }
 #page-tech-acv .arch-row {
   position: relative;
@@ -8903,6 +8916,19 @@ body:not(.home-page-visible) > footer.footer .footer-top {
   border-radius: 10px;
   background: rgba(255,255,255,.9);
   box-shadow: 0 12px 28px rgba(31,82,157,.07), inset 0 1px 0 #fff;
+  overflow: visible;
+  counter-increment: acv-layer;
+  transition: transform .35s cubic-bezier(.2,.8,.2,1), border-color .35s ease, box-shadow .35s ease;
+}
+#page-tech-acv .arch-row:hover {
+  z-index: 3;
+  transform: translateX(-8px);
+  border-color: #8eb7f7;
+  box-shadow: 0 20px 42px rgba(31,82,157,.14), inset 0 1px 0 #fff;
+}
+#page-tech-acv .arch-row:focus-within {
+  border-color: #6b9ff4;
+  box-shadow: 0 0 0 4px rgba(37,99,235,.1), 0 20px 42px rgba(31,82,157,.12);
 }
 #page-tech-acv .arch-row:not(:last-child)::after {
   content: '';
@@ -8935,6 +8961,13 @@ body:not(.home-page-visible) > footer.footer .footer-top {
   background: linear-gradient(110deg, rgba(239,246,255,.95), rgba(247,250,255,.78));
 }
 #page-tech-acv .arch-row-head h3 { margin: 0; color: #111a39; font-size: 18px; white-space: nowrap; }
+#page-tech-acv .arch-row-head::after {
+  content: '0' counter(acv-layer);
+  margin-left: auto;
+  color: rgba(42,103,207,.34);
+  font: 600 11px/1 var(--font-mono);
+  letter-spacing: .08em;
+}
 #page-tech-acv .arch-main-icon {
   width: 42px;
   height: 42px;
@@ -8951,7 +8984,13 @@ body:not(.home-page-visible) > footer.footer .footer-top {
 #page-tech-acv .arch-apps .arch-item i { width: 49px; height: 49px; display: grid; place-items: center; border: 1px solid #d5e3fa; border-radius: 50%; background: #fff; box-shadow: 0 5px 13px rgba(48,102,189,.07); }
 #page-tech-acv .arch-apps .arch-item img { width: 24px; height: 24px; object-fit: contain; }
 #page-tech-acv .arch-pills { flex-wrap: wrap; align-content: center; justify-content: center; }
-#page-tech-acv .arch-pill { padding: 7px 15px; color: #3a5eaa; font-size: 13px; line-height: 1; white-space: nowrap; border: 1px solid #d8e5f8; border-radius: 18px; background: linear-gradient(180deg,#fff,#f2f7ff); box-shadow: 0 5px 10px rgba(43,91,170,.08); }
+#page-tech-acv .arch-pill { padding: 7px 15px; color: #3a5eaa; font-size: 13px; line-height: 1; white-space: nowrap; border: 1px solid #d8e5f8; border-radius: 18px; background: linear-gradient(180deg,#fff,#f2f7ff); box-shadow: 0 5px 10px rgba(43,91,170,.08); transition: color .25s ease, border-color .25s ease, transform .25s ease, box-shadow .25s ease; }
+#page-tech-acv .arch-pill:hover { color: #165fd7; border-color: #9fc1f8; transform: translateY(-2px); box-shadow: 0 8px 16px rgba(43,91,170,.13); }
+#page-tech-acv .arch-flow-note { display: inline-flex; align-items: center; gap: 9px; margin-top: 28px; padding: 8px 12px; color: #3d5f97; font: 500 12px/1.3 var(--font-mono); letter-spacing: .04em; border: 1px solid #d7e4f8; border-radius: 999px; background: rgba(255,255,255,.72); }
+#page-tech-acv .arch-flow-note::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #2878f6; box-shadow: 0 0 0 4px rgba(40,120,246,.12); }
+@media (prefers-reduced-motion: reduce) {
+  #page-tech-acv .arch-row, #page-tech-acv .arch-pill { transition: none; }
+}
 #page-tech-acv .arch-sensors .arch-item { min-width: 58px; text-align: center; color: #17203e; font-size: 13px; white-space: nowrap; }
 #page-tech-acv .arch-sensors .arch-item svg { display: block; width: 29px; height: 29px; margin: 0 auto 8px; color: #317cf4; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 @media (max-width: 1100px) {
@@ -8964,7 +9003,9 @@ body:not(.home-page-visible) > footer.footer .footer-top {
   #page-tech-acv .acv-architecture-block .inner-section-heading { margin-bottom: 38px; }
   #page-tech-acv .acv-architecture-block .inner-section-heading .section-title { font-size: 32px !important; margin: 14px 0 24px; }
   #page-tech-acv .acv-architecture-visual { left: auto; width: 100%; height: auto; margin: 0; transform: none; }
+  #page-tech-acv .acv-architecture-visual::before { inset: -18px -8px; border-radius: 18px; }
   #page-tech-acv .arch-row { grid-template-columns: 1fr; }
+  #page-tech-acv .arch-row:hover { transform: translateY(-3px); }
   #page-tech-acv .arch-row-head { min-height: 72px; justify-content: center; border-radius: 9px 9px 0 0; }
   #page-tech-acv .arch-row-content { overflow-x: auto; justify-content: flex-start; padding: 18px; }
   #page-tech-acv .arch-pills { overflow: visible; justify-content: center; }
@@ -11749,6 +11790,7 @@ html.home-scroll-enabled{scroll-snap-type:none!important}#page-home .home-snap{s
         <div class="section-eyebrow">ARCHITECTURE</div>
         <h2 class="section-title" style="font-size:28px;">四层技术架构</h2>
         <p class="section-subtitle">从感知到应用，每一层都自主可控、按需扩展</p>
+        <div class="arch-flow-note" aria-label="数据由智能感知层向行业应用层流动">SENSE · CONNECT · TWIN · APPLY</div>
       </div>
 
       <div class="acv-architecture-visual" role="img" aria-label="智慧云视应用中台四层技术架构：行业应用、数字孪生底座、AIoT中台与智能感知">
@@ -11766,7 +11808,7 @@ html.home-scroll-enabled{scroll-snap-type:none!important}#page-home .home-snap{s
           <symbol id="acv-sensor" viewBox="0 0 24 24"><path d="M8 16a6 6 0 0 1 0-8M5 19a10 10 0 0 1 0-14M16 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/><circle cx="12" cy="12" r="2"/></symbol>
         </defs></svg>
 
-        <article class="arch-row">
+        <article class="arch-row" aria-label="行业应用层">
           <header class="arch-row-head"><span class="arch-main-icon solid"><svg><use href="#acv-grid"/></svg></span><h3>行业应用</h3></header>
           <div class="arch-row-content arch-apps">
             <span class="arch-item"><i><img src="assets/figma-inner-v2/acv/vector-15.svg" alt=""></i>生态环境</span>
@@ -11778,15 +11820,15 @@ html.home-scroll-enabled{scroll-snap-type:none!important}#page-home .home-snap{s
             <span class="arch-item"><i><img src="assets/figma-inner-v2/acv/vector-20.svg" alt=""></i>应急管理</span>
           </div>
         </article>
-        <article class="arch-row">
+        <article class="arch-row" aria-label="数字孪生底座层">
           <header class="arch-row-head"><span class="arch-main-icon"><svg><use href="#acv-cube"/></svg></span><h3>数字孪生底座</h3></header>
           <div class="arch-row-content arch-pills"><span class="arch-pill">三维建模</span><span class="arch-pill">场景渲染</span><span class="arch-pill">虚实同步</span><span class="arch-pill">时空计算</span><span class="arch-pill">交互控制</span><span class="arch-pill">仿真推演</span></div>
         </article>
-        <article class="arch-row">
+        <article class="arch-row" aria-label="AIoT中台层">
           <header class="arch-row-head"><span class="arch-main-icon"><svg><use href="#acv-cloud"/></svg></span><h3>AIoT中台</h3></header>
           <div class="arch-row-content arch-pills"><span class="arch-pill">视频汇聚引擎</span><span class="arch-pill">物联网接入引擎</span><span class="arch-pill">数据汇聚引擎</span><span class="arch-pill">凌云天基大模型</span><span class="arch-pill">图像算法引擎</span><span class="arch-pill">空间可视引擎</span></div>
         </article>
-        <article class="arch-row">
+        <article class="arch-row" aria-label="智能感知层">
           <header class="arch-row-head"><span class="arch-main-icon"><svg><use href="#acv-signal"/></svg></span><h3>智能感知</h3></header>
           <div class="arch-row-content arch-sensors">
             <span class="arch-item"><svg><use href="#acv-drone"/></svg>无人机</span><span class="arch-item"><svg><use href="#acv-satellite"/></svg>卫星</span><span class="arch-item"><svg><use href="#acv-terminal"/></svg>智能终端</span><span class="arch-item"><svg><use href="#acv-camera"/></svg>高清IPC</span><span class="arch-item"><svg><use href="#acv-chip"/></svg>AI边缘分析终端</span><span class="arch-item"><svg><use href="#acv-monitor"/></svg>监测设备</span><span class="arch-item"><svg><use href="#acv-sensor"/></svg>传感器</span>
