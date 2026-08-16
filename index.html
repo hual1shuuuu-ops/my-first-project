@@ -5338,6 +5338,26 @@ img { max-width: 100%; display: block; }
   border: 1px solid #e4e8f0;
 }
 
+/* Core advantages use independent imagery and live text instead of flattened cards. */
+#page-about .about-advantage-card {
+  overflow: hidden;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 14px 38px rgba(16, 40, 82, .08);
+}
+#page-about .about-advantage-media { height: 162px; overflow: hidden; }
+#page-about .about-advantage-media img {
+  display: block;
+  width: 100%;
+  height: 280px;
+  border: 0;
+  object-fit: cover;
+  object-position: center top;
+}
+#page-about .about-advantage-copy { padding: 22px 26px 26px; }
+#page-about .about-advantage-copy h3 { color: #111827; font-size: 21px; line-height: 30px; }
+#page-about .about-advantage-copy p { margin-top: 9px; color: #667085; font-size: 14px; line-height: 24px; }
+
 #page-about .about-timeline-shot {
   background: #f7f8fc;
 }
@@ -5373,6 +5393,21 @@ img { max-width: 100%; display: block; }
 #page-about .certificate-row-five img {
   width: 220px;
 }
+
+/* Three seamless, alternating honor rails. */
+#page-about .certificate-row {
+  justify-content: flex-start;
+  width: max-content;
+  will-change: transform;
+  animation: honorRailLeft 34s linear infinite;
+}
+#page-about .certificate-row-three { animation-name: honorRailRight; animation-duration: 30s; }
+#page-about .certificate-row-five { animation-duration: 38s; }
+#page-about .certificate-viewport { overflow: hidden; }
+#page-about .certificate-viewport:hover .certificate-row { animation-play-state: paused; }
+@keyframes honorRailLeft { to { transform: translateX(calc(-50% - 12px)); } }
+@keyframes honorRailRight { from { transform: translateX(calc(-50% - 12px)); } to { transform: translateX(0); } }
+@media (prefers-reduced-motion: reduce) { #page-about .certificate-row { animation-play-state: paused; } }
 
 /* Core Technology / 100:332 */
 #page-tech .tech-figma-cards {
@@ -6004,6 +6039,15 @@ body:not(.home-page-visible) > footer.footer .footer-top {
 #page-prod-cloudctrl .p2-ops-step .state::before { content:''; display:inline-block; width:6px; height:6px; margin-right:6px; border-radius:50%; background:#34d399; box-shadow:0 0 8px #34d399; }
 #page-prod-cloudctrl .p2-ops-step h3 { font-size:16px; line-height:24px; color:#18243b; }
 #page-prod-cloudctrl .p2-ops-step p { margin-top:8px; color:#758196; font-size:12px; line-height:19px; }
+
+/* Unified friendly corner language for platform imagery and cards. */
+#page-prod-cloudpath .p2-detail-visual,
+#page-prod-cloudctrl .p2-detail-visual { width:100%; height:360px; object-fit:cover; border-radius:14px; box-shadow:0 20px 45px rgba(15,36,83,.18); }
+#page-prod-cloudpath .p2-architecture,
+#page-prod-cloudctrl .p2-ops-topology,
+#page-prod-cloudpath .p2-flow-node,
+#page-prod-cloudpath .p2-deploy-item,
+#page-prod-cloudctrl .p2-ops-step { border-radius:12px; }
 
 @media (max-width: 1100px) {
   #page-products .p2-products-section,
@@ -9896,7 +9940,7 @@ html.home-scroll-enabled{scroll-snap-type:none!important}#page-home .home-snap{s
 #page-home .home-solutions-section .section-eyebrow,#page-home .home-solutions-section .section-title,#page-home .home-solutions-section .section-subtitle{width:100%;text-align:center}
 #page-home .home-solutions-section .section-subtitle{margin-left:auto;margin-right:auto}
 
-#page-home .home-products-section{height:799px;min-height:799px;padding:59px 24px 0;background:#071124 url('assets/figma-home/product-bg.png') center/cover no-repeat}
+#page-home .home-products-section{height:799px;min-height:799px;padding:59px 24px 0;background:#071124 url('assets/figma-v3/product-background.png') center/cover no-repeat}
 #page-home .home-products-section .section-inner{width:1200px;max-width:1200px;margin:0 auto}
 #page-home .home-products-section .section-header{width:100%;max-width:780px;height:73px;margin:0 auto;text-align:center}
 #page-home .home-products-section .section-eyebrow{font-size:12px;font-weight:600;line-height:20.4px;letter-spacing:2.16px;color:#6394ff}
@@ -9923,15 +9967,16 @@ html.home-scroll-enabled{scroll-snap-type:none!important}#page-home .home-snap{s
 #page-home .stats-grid{display:none}
 #page-home .figma-stats-grid{display:grid;grid-template-columns:repeat(4,1fr);max-width:985px;margin:38px auto 0}
 #page-home .figma-stats-grid div{text-align:center}#page-home .figma-stats-grid b{display:block;color:#2563eb;font:700 48px/1 var(--font-en)}#page-home .figma-stats-grid em{font:500 18px var(--font-cn);font-style:normal}#page-home .figma-stats-grid span{display:block;margin-top:12px;color:#7b8493;font-size:16px}
-#page-home .stats-visual{top:292px;left:50%;width:820px;height:525px;transform:translateX(-50%);background:url('assets/figma-home/strength-1.png') center/contain no-repeat;filter:none}
+#page-home .stats-visual{top:292px;left:50%;width:820px;height:525px;transform:translateX(-50%);background:url('assets/figma-home/strength-2.png') center/contain no-repeat;filter:none}
 #page-home .strength-markers{left:50%;transform:translateX(-50%);width:820px}
 #page-home .strength-marker{display:none}
-#page-home .strength-markers:before{content:'';position:absolute;left:50%;top:430px;width:260px;height:210px;transform:translateX(-18%);background:radial-gradient(circle at 20% 50%,#fff 0 3px,#2681ff 4px 6px,transparent 7px),radial-gradient(circle at 32% 40%,#fff 0 3px,#2681ff 4px 6px,transparent 7px),radial-gradient(circle at 44% 52%,#fff 0 3px,#2681ff 4px 6px,transparent 7px),radial-gradient(circle at 55% 36%,#fff 0 3px,#2681ff 4px 6px,transparent 7px),radial-gradient(circle at 62% 58%,#fff 0 3px,#2681ff 4px 6px,transparent 7px),radial-gradient(circle at 72% 44%,#fff 0 3px,#2681ff 4px 6px,transparent 7px),radial-gradient(circle at 82% 28%,#fff 0 3px,#2681ff 4px 6px,transparent 7px),radial-gradient(circle at 38% 70%,#fff 0 3px,#2681ff 4px 6px,transparent 7px),radial-gradient(circle at 57% 76%,#fff 0 3px,#2681ff 4px 6px,transparent 7px),radial-gradient(circle at 76% 68%,#fff 0 3px,#2681ff 4px 6px,transparent 7px)}
+#page-home .strength-markers:before{content:none}
 
 #page-home .home-cases-section .section-header{width:100%;max-width:1200px;margin:0 auto 42px;text-align:center;align-items:center}
 #page-home .home-cases-section .section-header>*{width:100%;text-align:center}
 #page-home .home-cases-section .section-subtitle{margin-left:auto;margin-right:auto}
 #page-home .home-case-showcase{grid-template-columns:320px 1fr;gap:28px;height:580px}
+#page-home .home-case-list,#page-home .home-case-detail{border-radius:12px}
 
 #page-home .partner-logo,#page-home .partner-logo:hover{filter:none!important;opacity:1!important}
 }
@@ -10906,7 +10951,7 @@ html.home-scroll-enabled{scroll-snap-type:none!important}#page-home .home-snap{s
           <div class="product-info">
             <h3>凌云天基大模型</h3>
             <div class="en-name"></div>
-            <p>农林水环行业专属全栈国产化软硬一体AI终端，搭载垂直大模型与智能Agent，实现全域感知与全业务闭环，开箱即用、合规可控。</p>
+            <p>凌云天基大模型以星-边-云一体化架构为核心，汇聚空天地全维度异构数据，实现“数据不出星、决策在云端、执行在边缘”，为各行业提供低时延、高可靠、自主可控的空天智能底座。</p>
             <ul class="product-features">
               <li><span class="check-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span> 行业垂直推理模型，多智能体业务协同</li>
               <li><span class="check-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span> 天-空-地多模态融合，全域智能感知</li>
@@ -10924,7 +10969,7 @@ html.home-scroll-enabled{scroll-snap-type:none!important}#page-home .home-snap{s
       <div class="product-panel" id="panel-p2">
         <div class="product-showcase">
           <div class="product-info">
-            <h3>智慧云途算法开放平台</h3>
+            <h3>智慧云途训推一体平台</h3>
             <div class="en-name">Smart Cloud Path</div>
             <p>零门槛上手的一站式算法训练平台，内置优质模型与标准化数据集，覆盖全流程数据管理、多模式标注、训推闭环全能力，真正实现算法即训即用。</p>
             <ul class="product-features">
@@ -10936,7 +10981,7 @@ html.home-scroll-enabled{scroll-snap-type:none!important}#page-home .home-snap{s
             <button class="btn-primary" onclick="navigate('prod-cloudpath')">查看产品详情</button>
           </div>
           <div class="product-visual product-visual-ui">
-            <img src="assets/env_soil.png" alt="智慧云途平台业务界面">
+            <img src="assets/product-cloudpath-visual.png" alt="智慧云途训推一体平台业务界面">
           </div>
         </div>
       </div>
@@ -10956,7 +11001,7 @@ html.home-scroll-enabled{scroll-snap-type:none!important}#page-home .home-snap{s
             <button class="btn-primary" onclick="navigate('prod-cloudctrl')">查看产品详情</button>
           </div>
           <div class="product-visual product-visual-ui">
-            <img src="assets/forest_fire_case.png" alt="智慧云控综合运维界面">
+            <img src="assets/product-cloudctrl-visual.png" alt="智慧云控综合运维界面">
           </div>
         </div>
       </div>
@@ -11172,10 +11217,10 @@ html.home-scroll-enabled{scroll-snap-type:none!important}#page-home .home-snap{s
           <h2>核心优势</h2>
         </div>
         <div class="about-advantage-images">
-          <img src="assets/about/advantage-1.png" alt="整体交付：提供全栈式空天地一体化超融合服务">
-          <img src="assets/about/advantage-2.png" alt="行业积累：21年行业深耕与丰富案例">
-          <img src="assets/about/advantage-3.png" alt="产品完备：天、空、地全栈产品体系">
-          <img src="assets/about/advantage-4.png" alt="贴身服务：专业交付团队与全程服务">
+          <article class="about-advantage-card"><div class="about-advantage-media"><img src="assets/about/advantage-1.png" alt="卫星与地球组成的空天地一体化场景"></div><div class="about-advantage-copy"><h3>整体交付</h3><p>聚焦农林水环四大核心行业，融合天基卫星与边缘算力核心能力，以云边端协同架构为支撑，提供 IaaS-PaaS-SaaS 全栈式空天地一体化超融合服务。</p></div></article>
+          <article class="about-advantage-card"><div class="about-advantage-media"><img src="assets/about/advantage-2.png" alt="行业项目与技术积累场景"></div><div class="about-advantage-copy"><h3>行业积累</h3><p>21 年持续深耕行业，在复杂场景中沉淀丰富项目经验与技术能力，以成熟方法论保障方案高质量落地。</p></div></article>
+          <article class="about-advantage-card"><div class="about-advantage-media"><img src="assets/about/advantage-3.png" alt="空天地全栈产品体系"></div><div class="about-advantage-copy"><h3>产品完备</h3><p>构建覆盖天、空、地的全栈产品体系，从大模型、平台到智能硬件与算法，为多元业务提供完整技术支撑。</p></div></article>
+          <article class="about-advantage-card"><div class="about-advantage-media"><img src="assets/about/advantage-4.png" alt="专业团队提供贴身服务"></div><div class="about-advantage-copy"><h3>贴身服务</h3><p>以专业交付团队贯穿咨询、建设、运维全周期，快速响应业务需求，为客户提供稳定、持续的服务保障。</p></div></article>
         </div>
       </div>
     </section>
@@ -11190,23 +11235,41 @@ html.home-scroll-enabled{scroll-snap-type:none!important}#page-home .home-snap{s
           <div class="section-eyebrow">HONORS &amp; QUALIFICATIONS</div>
           <h2>荣誉资质</h2>
         </div>
+        <div class="certificate-viewport">
         <div class="certificate-row certificate-row-four">
           <img src="assets/about/certificate-01.png" alt="荣誉资质证书1">
           <img src="assets/about/certificate-02.png" alt="荣誉资质证书2">
           <img src="assets/about/certificate-03.png" alt="荣誉资质证书3">
           <img src="assets/about/certificate-04.png" alt="荣誉资质证书4">
+          <img src="assets/about/certificate-01.png" alt="荣誉资质证书1">
+          <img src="assets/about/certificate-02.png" alt="荣誉资质证书2">
+          <img src="assets/about/certificate-03.png" alt="荣誉资质证书3">
+          <img src="assets/about/certificate-04.png" alt="荣誉资质证书4">
         </div>
+        </div>
+        <div class="certificate-viewport">
         <div class="certificate-row certificate-row-three">
           <img src="assets/about/certificate-05.png" alt="荣誉资质证书5">
           <img src="assets/about/certificate-06.png" alt="荣誉资质证书6">
           <img src="assets/about/certificate-07.png" alt="荣誉资质证书7">
+          <img src="assets/about/certificate-05.png" alt="荣誉资质证书5">
+          <img src="assets/about/certificate-06.png" alt="荣誉资质证书6">
+          <img src="assets/about/certificate-07.png" alt="荣誉资质证书7">
         </div>
+        </div>
+        <div class="certificate-viewport">
         <div class="certificate-row certificate-row-five">
           <img src="assets/about/certificate-08.png" alt="荣誉资质证书8">
           <img src="assets/about/certificate-09.png" alt="荣誉资质证书9">
           <img src="assets/about/certificate-10.png" alt="荣誉资质证书10">
           <img src="assets/about/certificate-11.png" alt="荣誉资质证书11">
           <img src="assets/about/certificate-12.png" alt="荣誉资质证书12">
+          <img src="assets/about/certificate-08.png" alt="荣誉资质证书8">
+          <img src="assets/about/certificate-09.png" alt="荣誉资质证书9">
+          <img src="assets/about/certificate-10.png" alt="荣誉资质证书10">
+          <img src="assets/about/certificate-11.png" alt="荣誉资质证书11">
+          <img src="assets/about/certificate-12.png" alt="荣誉资质证书12">
+        </div>
         </div>
       </div>
     </section>
@@ -12130,7 +12193,7 @@ html.home-scroll-enabled{scroll-snap-type:none!important}#page-home .home-snap{s
           <div class="product-img bg-dark-3"><div class="product-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></div></div>
           <div class="product-body">
             <div class="product-cat">平台</div>
-            <h4>智慧云途算法开放平台</h4>
+            <h4>智慧云途训推一体平台</h4>
             <p>零门槛一站式算法训练平台，内置300+行业算法，训推一体即训即用</p>
             <div class="product-specs">
               <div class="spec-item"><div class="spec-value">300+</div><div class="spec-label">预置算法</div></div>
@@ -12185,23 +12248,23 @@ html.home-scroll-enabled{scroll-snap-type:none!important}#page-home .home-snap{s
 </div>
 
 <!-- ================================================================ -->
-<!-- PAGE: PROD-CLOUDPATH (智慧云途算法开放平台) -->
+<!-- PAGE: PROD-CLOUDPATH (智慧云途训推一体平台) -->
 <!-- ================================================================ -->
 <div class="page" id="page-prod-cloudpath">
   <div class="subpage-hero phase2-hero">
     <div class="subpage-hero-inner">
       <div class="breadcrumb">
-        <a onclick="navigate('home')">首页</a><span class="sep">/</span><a onclick="navigate('products')">核心产品</a><span class="sep">/</span>智慧云途算法开放平台
+        <a onclick="navigate('home')">首页</a><span class="sep">/</span><a onclick="navigate('products')">核心产品</a><span class="sep">/</span>智慧云途训推一体平台
       </div>
-      <h1>智慧云途算法开放平台</h1>
+      <h1>智慧云途训推一体平台</h1>
       <p class="subtitle">零门槛上手的一站式算法训练平台，内置优质模型与标准化数据集，覆盖全流程数据管理、多模式标注、训推闭环全能力</p>
     </div>
   </div>
 
   <section class="p2-intro">
     <div class="p2-intro-inner">
-      <div class="p2-intro-copy"><h2>智慧云途算法开放平台</h2><div class="en-name">SMART CLOUD PATH</div><p>零门槛上手的一站式算法训练平台，内置优质模型与标准化数据集，覆盖全流程数据管理、多模式标注、训推闭环全能力，真正实现算法即训即用。</p><ul class="p2-intro-features"><li>300+行业算法预置，一键微调优化</li><li>零门槛全层级适配，新手一键入门</li><li>训推一体，即训即用，免额外调试</li><li>不限数量，按需拓展，适配业务变化</li><li>SaaS+私有化灵活部署</li></ul></div>
-      <div class="p2-architecture" aria-label="智慧云途算法平台分层体系"><div class="p2-arch-title">ALGORITHM PLATFORM ARCHITECTURE</div><div class="p2-arch-flow"></div><div class="p2-arch-layers"><div class="p2-arch-layer"><strong>行业应用</strong><div class="p2-arch-nodes"><span>农林</span><span>水利</span><span>环保</span><span>低空</span><span>城市</span></div></div><div class="p2-arch-layer"><strong>算法能力</strong><div class="p2-arch-nodes"><span>目标检测</span><span>图像分类</span><span>多模态识别</span><span>行为分析</span></div></div><div class="p2-arch-layer"><strong>平台服务</strong><div class="p2-arch-nodes"><span>数据服务</span><span>模型仓库</span><span>任务调度</span><span>开放API</span></div></div><div class="p2-arch-layer"><strong>基础设施</strong><div class="p2-arch-nodes"><span>计算资源</span><span>存储资源</span><span>网络资源</span><span>安全防护</span></div></div></div></div>
+      <div class="p2-intro-copy"><h2>智慧云途训推一体平台</h2><div class="en-name">SMART CLOUD PATH</div><p>零门槛上手的一站式算法训练平台，内置优质模型与标准化数据集，覆盖全流程数据管理、多模式标注、训推闭环全能力，真正实现算法即训即用。</p><ul class="p2-intro-features"><li>300+行业算法预置，一键微调优化</li><li>零门槛全层级适配，新手一键入门</li><li>训推一体，即训即用，免额外调试</li><li>不限数量，按需拓展，适配业务变化</li><li>SaaS+私有化灵活部署</li></ul></div>
+      <img class="p2-detail-visual" src="assets/product-cloudpath-visual.png" alt="智慧云途训推一体平台">
     </div>
   </section>
 
@@ -12216,7 +12279,7 @@ html.home-scroll-enabled{scroll-snap-type:none!important}#page-home .home-snap{s
     <div class="section-inner">
       <div class="product-showcase">
         <div class="product-info">
-          <h3>智慧云途算法开放平台</h3>
+          <h3>智慧云途训推一体平台</h3>
           <div class="en-name">Smart Cloud Path</div>
           <p>零门槛上手的一站式算法训练平台，内置优质模型与标准化数据集，覆盖全流程数据管理、多模式标注、训推闭环全能力，真正实现算法即训即用。</p>
           <ul class="product-features">
@@ -12307,7 +12370,7 @@ html.home-scroll-enabled{scroll-snap-type:none!important}#page-home .home-snap{s
   <section class="p2-intro">
     <div class="p2-intro-inner">
       <div class="p2-intro-copy"><h2>智慧云控一体化运维平台</h2><div class="en-name">SMART CLOUD CONTROL</div><p>全域监测、智能预警、自动化处置、统一管理一体化运维平台，保障系统7×24小时稳定运行。通过AI驱动的智能预警体系，实现故障秒级发现、分钟级处置。</p><ul class="p2-intro-features"><li>全域系统监测与大屏可视化</li><li>AI驱动智能预警体系</li><li>自动化事件处置与闭环</li><li>统一管理控制台</li><li>多租户权限管理与审计</li></ul></div>
-      <div class="p2-ops-topology" aria-label="智慧云控一体化运维拓扑"><svg viewBox="0 0 560 360" fill="none" aria-hidden="true"><defs><linearGradient id="opsLine" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#38BDF8" stop-opacity=".15"/><stop offset=".5" stop-color="#60A5FA"/><stop offset="1" stop-color="#2563EB" stop-opacity=".15"/></linearGradient></defs><g stroke="url(#opsLine)" stroke-width="1.5"><path d="M142 82L220 145M418 82L340 145M142 278L220 215M418 278L340 215"/><ellipse cx="280" cy="180" rx="196" ry="126" stroke-opacity=".36" stroke-dasharray="5 7"/><ellipse cx="280" cy="180" rx="132" ry="86" stroke-opacity=".24"/></g><g fill="#7DD3FC"><circle cx="181" cy="113" r="4"/><circle cx="379" cy="113" r="4"/><circle cx="181" cy="247" r="4"/><circle cx="379" cy="247" r="4"/></g></svg><div class="p2-ops-core"><strong>统一运维控制台</strong><span>SMART OPS CENTER</span></div><div class="p2-ops-node n1">服务器资源</div><div class="p2-ops-node n2">网络设备</div><div class="p2-ops-node n3">应用系统</div><div class="p2-ops-node n4">边缘终端</div><div class="p2-ops-status">SYSTEM STATUS · 7×24 ONLINE</div></div>
+      <img class="p2-detail-visual" src="assets/product-cloudctrl-visual.png" alt="智慧云控一体化运维平台">
     </div>
   </section>
 
@@ -14507,7 +14570,7 @@ html.home-scroll-enabled{scroll-snap-type:none!important}#page-home .home-snap{s
       </div>
       <div class="aicloud-module" onclick="window.open('http://www.tbivr.com/pages/AI-DEMO.html','_blank')" style="cursor:pointer;">
         <div class="aicloud-module-body">
-          <h4>智慧云途算法开放平台</h4>
+          <h4>智慧云途训推一体平台</h4>
           <p>自研200+核心算法，多模态深度学习，突破小尺寸、高动态检测极限。覆盖人员检测、车辆检测、船只检测、环境检测、烟火识别等全场景算法能力，支持低代码算法生成与一体化部署。</p>
           <div class="aicloud-tags"><span>200+算法</span><span>多模态</span><span>低代码生成</span><span>一体化部署</span></div>
         </div>
@@ -15183,4 +15246,3 @@ updateHomeScrollState();
 
 
 <div class="light"></div><div data-trae-edit-ui="true"></div></body></html>
-
