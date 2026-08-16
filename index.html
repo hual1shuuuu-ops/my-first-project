@@ -8817,6 +8817,159 @@ body:not(.home-page-visible) > footer.footer .footer-top {
   background: #fff;
 }
 
+/* ACV four-layer architecture — horizontal card system */
+#page-tech-acv .acv-architecture-block {
+  min-height: 820px;
+  padding: 118px max(24px, calc((100% - 1200px) / 2)) 110px;
+  display: grid;
+  grid-template-columns: 330px minmax(0, 1fr);
+  gap: 58px;
+  align-items: center;
+  background:
+    radial-gradient(circle at 71% 45%, rgba(218,232,255,.42), transparent 34%),
+    linear-gradient(145deg, #fbfcff 0%, #f7f9fd 52%, #fff 100%);
+}
+#page-tech-acv .acv-architecture-block::before {
+  content: '';
+  position: absolute;
+  left: -70px;
+  bottom: 50px;
+  width: 390px;
+  height: 245px;
+  opacity: .7;
+  background:
+    radial-gradient(circle, rgba(79,137,244,.23) 1px, transparent 1.8px) 0 0/13px 13px;
+  mask-image: linear-gradient(120deg, #000, transparent 74%);
+}
+#page-tech-acv .acv-architecture-block::after {
+  content: '';
+  position: absolute;
+  left: -60px;
+  bottom: 62px;
+  width: 295px;
+  height: 130px;
+  border: 1px solid rgba(129,173,246,.26);
+  border-radius: 24px;
+  background: linear-gradient(145deg, rgba(255,255,255,.32), rgba(213,231,255,.48));
+  box-shadow: 0 13px 0 rgba(226,237,255,.65), 0 26px 0 rgba(236,243,255,.5), 0 28px 32px rgba(67,119,206,.12);
+  transform: rotate(-8deg) skewX(-12deg);
+}
+#page-tech-acv .acv-architecture-block .inner-section-heading {
+  position: relative;
+  z-index: 2;
+  width: auto;
+  margin: -72px 0 0;
+}
+#page-tech-acv .acv-architecture-block .inner-section-heading::after {
+  content: '';
+  display: block;
+  width: 52px;
+  height: 3px;
+  margin-top: 25px;
+  border-radius: 3px;
+  background: #2675f5;
+}
+#page-tech-acv .acv-architecture-block .inner-section-heading .section-eyebrow {
+  color: #2878f6;
+  font: 600 13px/1.4 var(--font-mono);
+  letter-spacing: .18em;
+}
+#page-tech-acv .acv-architecture-block .inner-section-heading .section-title {
+  margin: 22px 0 38px;
+  color: #121a3a;
+  font-size: 40px !important;
+  line-height: 1.2;
+  letter-spacing: -.03em;
+}
+#page-tech-acv .acv-architecture-block .section-subtitle {
+  color: #667189;
+  font-size: 16px;
+}
+#page-tech-acv .acv-architecture-visual {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+#page-tech-acv .arch-row {
+  position: relative;
+  z-index: 1;
+  min-height: 112px;
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  border: 1px solid #cbdcf7;
+  border-radius: 10px;
+  background: rgba(255,255,255,.9);
+  box-shadow: 0 12px 28px rgba(31,82,157,.07), inset 0 1px 0 #fff;
+}
+#page-tech-acv .arch-row:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -29px;
+  width: 1px;
+  height: 28px;
+  background: #76a8f9;
+}
+#page-tech-acv .arch-row:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  left: calc(50% - 3px);
+  bottom: -18px;
+  width: 5px;
+  height: 5px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  background: #2878f6;
+  box-shadow: 0 0 0 2px #dce9ff;
+}
+#page-tech-acv .arch-row-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 22px;
+  border-radius: 9px 0 0 9px;
+  background: linear-gradient(110deg, rgba(239,246,255,.95), rgba(247,250,255,.78));
+}
+#page-tech-acv .arch-row-head h3 { margin: 0; color: #111a39; font-size: 18px; white-space: nowrap; }
+#page-tech-acv .arch-main-icon {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  display: grid;
+  place-items: center;
+  color: #317cf4;
+}
+#page-tech-acv .arch-main-icon.solid { border-radius: 10px; color: #fff; background: linear-gradient(145deg,#62a1ff,#216af0); box-shadow: 0 7px 15px rgba(37,99,235,.2); }
+#page-tech-acv .arch-main-icon svg { width: 34px; height: 34px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+#page-tech-acv .arch-main-icon.solid svg { width: 25px; height: 25px; stroke-width: 2; }
+#page-tech-acv .arch-row-content { display: flex; align-items: center; justify-content: space-around; gap: 12px; padding: 18px 20px; }
+#page-tech-acv .arch-apps .arch-item { min-width: 58px; display: flex; flex-direction: column; align-items: center; gap: 7px; color: #17203e; font-size: 13px; white-space: nowrap; }
+#page-tech-acv .arch-apps .arch-item i { width: 49px; height: 49px; display: grid; place-items: center; border: 1px solid #d5e3fa; border-radius: 50%; background: #fff; box-shadow: 0 5px 13px rgba(48,102,189,.07); }
+#page-tech-acv .arch-apps .arch-item img { width: 24px; height: 24px; object-fit: contain; }
+#page-tech-acv .arch-pills { flex-wrap: wrap; align-content: center; justify-content: center; }
+#page-tech-acv .arch-pill { padding: 7px 15px; color: #3a5eaa; font-size: 13px; line-height: 1; white-space: nowrap; border: 1px solid #d8e5f8; border-radius: 18px; background: linear-gradient(180deg,#fff,#f2f7ff); box-shadow: 0 5px 10px rgba(43,91,170,.08); }
+#page-tech-acv .arch-sensors .arch-item { min-width: 58px; text-align: center; color: #17203e; font-size: 13px; white-space: nowrap; }
+#page-tech-acv .arch-sensors .arch-item svg { display: block; width: 29px; height: 29px; margin: 0 auto 8px; color: #317cf4; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+@media (max-width: 1100px) {
+  #page-tech-acv .acv-architecture-block { grid-template-columns: 1fr; gap: 42px; padding-top: 80px; }
+  #page-tech-acv .acv-architecture-block .inner-section-heading { width: min(100%, 820px); margin: 0 auto; }
+  #page-tech-acv .acv-architecture-visual { width: min(100%, 920px); margin: 0 auto; }
+}
+@media (max-width: 760px) {
+  #page-tech-acv .acv-architecture-block { display: block; padding: 58px 16px 70px; }
+  #page-tech-acv .acv-architecture-block .inner-section-heading { margin-bottom: 38px; }
+  #page-tech-acv .acv-architecture-block .inner-section-heading .section-title { font-size: 32px !important; margin: 14px 0 24px; }
+  #page-tech-acv .acv-architecture-visual { left: auto; width: 100%; height: auto; margin: 0; transform: none; }
+  #page-tech-acv .arch-row { grid-template-columns: 1fr; }
+  #page-tech-acv .arch-row-head { min-height: 72px; justify-content: center; border-radius: 9px 9px 0 0; }
+  #page-tech-acv .arch-row-content { overflow-x: auto; justify-content: flex-start; padding: 18px; }
+  #page-tech-acv .arch-pills { overflow: visible; justify-content: center; }
+}
+
 #page-tech-acv .inner-value-grid,
 #page-tech-twin .gis-scenes {
   display: grid;
@@ -9478,17 +9631,6 @@ body:not(.home-page-visible) > footer.footer .footer-top {
 }
 
 @media (max-width: 768px) {
-  #page-tech-acv .acv-architecture-block { min-height: 0; }
-  #page-tech-acv .acv-architecture-visual {
-    left: 50%;
-    width: 727px;
-    height: 925px;
-    margin-left: -363.5px;
-    margin-bottom: -167px;
-    transform: scale(.82);
-    transform-origin: top center;
-  }
-
   #page-tech-twin .gis-fusion-viewport { height: 361px; }
   #page-tech-twin .gis-fusion-stage {
     position: absolute;
@@ -9534,21 +9676,11 @@ body:not(.home-page-visible) > footer.footer .footer-top {
 }
 
 @media (max-width: 600px) {
-  #page-tech-acv .acv-architecture-visual {
-    margin-bottom: -296px;
-    transform: scale(.68);
-  }
-
   #page-tech-twin .gis-fusion-viewport { height: 275px; }
   #page-tech-twin .gis-fusion-stage { transform: translateX(-50%) scale(.38); }
 }
 
 @media (max-width: 480px) {
-  #page-tech-acv .acv-architecture-visual {
-    margin-bottom: -500px;
-    transform: scale(.46);
-  }
-
   #page-tech-twin .gis-fusion-viewport { height: 217px; }
   #page-tech-twin .gis-fusion-stage { transform: translateX(-50%) scale(.3); }
 }
@@ -11619,48 +11751,47 @@ html.home-scroll-enabled{scroll-snap-type:none!important}#page-home .home-snap{s
         <p class="section-subtitle">从感知到应用，每一层都自主可控、按需扩展</p>
       </div>
 
-      <div class="acv-architecture-visual" role="img" aria-label="智慧云视应用中台四层技术架构：智能感知、AIoT中台、数字孪生底座与行业应用">
-        <img class="arch-vector arch-beam" src="assets/figma-inner-v2/acv/vector-12.svg" alt="">
-        <img class="arch-vector arch-platform-top" src="assets/figma-inner-v2/acv/vector-05.svg" alt="">
-        <img class="arch-vector arch-platform-mid" src="assets/figma-inner-v2/acv/vector-06.svg" alt="">
-        <img class="arch-vector arch-platform-low" src="assets/figma-inner-v2/acv/vector-06.svg" alt="">
-        <img class="arch-vector arch-base-back" src="assets/figma-inner-v2/acv/vector-09.svg" alt="">
-        <img class="arch-vector arch-base-front" src="assets/figma-inner-v2/acv/vector-16.svg" alt="">
-        <img class="arch-vector arch-base-inner" src="assets/figma-inner-v2/acv/vector-02.svg" alt="">
+      <div class="acv-architecture-visual" role="img" aria-label="智慧云视应用中台四层技术架构：行业应用、数字孪生底座、AIoT中台与智能感知">
+        <svg width="0" height="0" aria-hidden="true" style="position:absolute"><defs>
+          <symbol id="acv-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+          <symbol id="acv-cube" viewBox="0 0 24 24"><path d="m12 2 9 5v10l-9 5-9-5V7z"/><path d="m3 7 9 5 9-5M12 22V12M7.5 4.5l9 5v5l-4.5 2.5-4.5-2.5v-5l9-5"/></symbol>
+          <symbol id="acv-cloud" viewBox="0 0 24 24"><path d="M7 18h11a4 4 0 0 0 .5-8A6.5 6.5 0 0 0 6 8.5 4.8 4.8 0 0 0 7 18Z"/><circle cx="12" cy="12" r="2.3"/><path d="M12 14.3V18m-4-3 2-1m6 1-2-1"/></symbol>
+          <symbol id="acv-signal" viewBox="0 0 24 24"><circle cx="12" cy="17" r="1.5"/><path d="M8.5 13.5a5 5 0 0 1 7 0M5.5 10.5a9 9 0 0 1 13 0M2.5 7.5a13.5 13.5 0 0 1 19 0"/><path d="M12 18.5V22"/></symbol>
+          <symbol id="acv-drone" viewBox="0 0 24 24"><path d="M7 12h10M9 12l2 4h2l2-4M12 8v4M9 8h6"/><path d="M3 7h6M15 7h6M6 7v3m12-3v3"/><circle cx="6" cy="7" r="2.5"/><circle cx="18" cy="7" r="2.5"/></symbol>
+          <symbol id="acv-satellite" viewBox="0 0 24 24"><path d="m9 15 6-6M7 12l5 5 4-4-5-5zM5 14l-3 3 5 5 3-3M14 5l3-3 5 5-3 3"/><path d="M15 15c2 0 4 2 4 4M15 19h.01"/></symbol>
+          <symbol id="acv-terminal" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M8 7h8M8 11h8M8 15h5"/></symbol>
+          <symbol id="acv-camera" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><circle cx="12" cy="12.5" r="3.5"/><path d="m7 6 1-2h3"/></symbol>
+          <symbol id="acv-chip" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 1v3m6-3v3M9 20v3m6-3v3M1 9h3m-3 6h3m16-6h3m-3 6h3"/><path d="M9 14V9h3a2 2 0 0 1 0 4H9m5 1-2-1"/></symbol>
+          <symbol id="acv-monitor" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M8 21h8M12 17v4M8 12l2-3 2 2 3-4 2 3"/></symbol>
+          <symbol id="acv-sensor" viewBox="0 0 24 24"><path d="M8 16a6 6 0 0 1 0-8M5 19a10 10 0 0 1 0-14M16 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/><circle cx="12" cy="12" r="2"/></symbol>
+        </defs></svg>
 
-        <h3 class="arch-layer-title arch-title-app">行业应用</h3>
-        <div class="arch-app-node" style="--node-left:55px;--node-top:27px;"><div class="arch-app-icon"><img src="assets/figma-inner-v2/acv/vector-15.svg" alt=""></div><span>生态环境</span></div>
-        <div class="arch-app-node" style="--node-left:148px;--node-top:41px;"><div class="arch-app-icon"><img src="assets/figma-inner-v2/acv/vector-11.svg" alt=""></div><span>农业乡村</span></div>
-        <div class="arch-app-node" style="--node-left:241px;--node-top:46px;"><div class="arch-app-icon"><img src="assets/figma-inner-v2/acv/vector-14.svg" alt=""></div><span>水利水务</span></div>
-        <div class="arch-app-node" style="--node-left:334px;--node-top:50px;"><div class="arch-app-icon"><img src="assets/figma-inner-v2/acv/vector-13.svg" alt=""></div><span>林业资源</span></div>
-        <div class="arch-app-node" style="--node-left:427px;--node-top:46px;"><div class="arch-app-icon"><img src="assets/figma-inner-v2/acv/vector-19.svg" alt=""></div><span>城市治理</span></div>
-        <div class="arch-app-node" style="--node-left:520px;--node-top:41px;"><div class="arch-app-icon"><img src="assets/figma-inner-v2/acv/vector-03.svg" alt=""></div><span>工业矿山</span></div>
-        <div class="arch-app-node" style="--node-left:613px;--node-top:27px;"><div class="arch-app-icon"><img src="assets/figma-inner-v2/acv/vector-20.svg" alt=""></div><span>应急管理</span></div>
-
-        <h3 class="arch-layer-title arch-title-twin">数字孪生底座</h3>
-        <span class="arch-twin-pill" style="--pill-left:50px;--pill-top:287px;">场景渲染</span>
-        <span class="arch-twin-pill" style="--pill-left:151px;--pill-top:248px;">三维建模</span>
-        <span class="arch-twin-pill" style="--pill-left:167px;--pill-top:320px;">虚实同步</span>
-        <span class="arch-twin-pill" style="--pill-left:480px;--pill-top:248px;">交互控制</span>
-        <span class="arch-twin-pill" style="--pill-left:581px;--pill-top:287px;">仿真推演</span>
-        <span class="arch-twin-pill" style="--pill-left:464px;--pill-top:320px;">时空计算</span>
-
-        <h3 class="arch-layer-title arch-title-aiot">AIoT中台</h3>
-        <span class="arch-engine-pill" style="--pill-left:40px;--pill-top:505px;">视频汇聚<br>引擎</span>
-        <span class="arch-engine-pill" style="--pill-left:150px;--pill-top:522px;">物联网<br>接入引擎</span>
-        <span class="arch-engine-pill" style="--pill-left:260px;--pill-top:535px;">数据汇聚<br>引擎</span>
-        <span class="arch-engine-pill" style="--pill-left:370px;--pill-top:535px;">凌云天基<br>大模型</span>
-        <span class="arch-engine-pill" style="--pill-left:480px;--pill-top:522px;">图像算法<br>引擎</span>
-        <span class="arch-engine-pill" style="--pill-left:590px;--pill-top:505px;">空间可视<br>引擎</span>
-
-        <h3 class="arch-layer-title arch-title-sense">智能感知</h3>
-        <div class="arch-endpoint" style="--end-left:18px;--end-top:805px;"><span>无人机</span></div>
-        <div class="arch-endpoint" style="--end-left:82px;--end-top:857px;"><span>卫星</span></div>
-        <div class="arch-endpoint" style="--end-left:174px;--end-top:889px;"><span>智能终端</span></div>
-        <div class="arch-endpoint" style="--end-left:309px;--end-top:898px;"><span>高清IPC</span></div>
-        <div class="arch-endpoint" style="--end-left:420px;--end-top:889px;"><span>AI边缘分析终端</span></div>
-        <div class="arch-endpoint" style="--end-left:548px;--end-top:862px;"><span>监测设备</span></div>
-        <div class="arch-endpoint" style="--end-left:611px;--end-top:805px;"><span>传感器</span></div>
+        <article class="arch-row">
+          <header class="arch-row-head"><span class="arch-main-icon solid"><svg><use href="#acv-grid"/></svg></span><h3>行业应用</h3></header>
+          <div class="arch-row-content arch-apps">
+            <span class="arch-item"><i><img src="assets/figma-inner-v2/acv/vector-15.svg" alt=""></i>生态环境</span>
+            <span class="arch-item"><i><img src="assets/figma-inner-v2/acv/vector-11.svg" alt=""></i>农业乡村</span>
+            <span class="arch-item"><i><img src="assets/figma-inner-v2/acv/vector-14.svg" alt=""></i>水利水务</span>
+            <span class="arch-item"><i><img src="assets/figma-inner-v2/acv/vector-13.svg" alt=""></i>林业资源</span>
+            <span class="arch-item"><i><img src="assets/figma-inner-v2/acv/vector-19.svg" alt=""></i>城市治理</span>
+            <span class="arch-item"><i><img src="assets/figma-inner-v2/acv/vector-03.svg" alt=""></i>工业矿山</span>
+            <span class="arch-item"><i><img src="assets/figma-inner-v2/acv/vector-20.svg" alt=""></i>应急管理</span>
+          </div>
+        </article>
+        <article class="arch-row">
+          <header class="arch-row-head"><span class="arch-main-icon"><svg><use href="#acv-cube"/></svg></span><h3>数字孪生底座</h3></header>
+          <div class="arch-row-content arch-pills"><span class="arch-pill">三维建模</span><span class="arch-pill">场景渲染</span><span class="arch-pill">虚实同步</span><span class="arch-pill">时空计算</span><span class="arch-pill">交互控制</span><span class="arch-pill">仿真推演</span></div>
+        </article>
+        <article class="arch-row">
+          <header class="arch-row-head"><span class="arch-main-icon"><svg><use href="#acv-cloud"/></svg></span><h3>AIoT中台</h3></header>
+          <div class="arch-row-content arch-pills"><span class="arch-pill">视频汇聚引擎</span><span class="arch-pill">物联网接入引擎</span><span class="arch-pill">数据汇聚引擎</span><span class="arch-pill">凌云天基大模型</span><span class="arch-pill">图像算法引擎</span><span class="arch-pill">空间可视引擎</span></div>
+        </article>
+        <article class="arch-row">
+          <header class="arch-row-head"><span class="arch-main-icon"><svg><use href="#acv-signal"/></svg></span><h3>智能感知</h3></header>
+          <div class="arch-row-content arch-sensors">
+            <span class="arch-item"><svg><use href="#acv-drone"/></svg>无人机</span><span class="arch-item"><svg><use href="#acv-satellite"/></svg>卫星</span><span class="arch-item"><svg><use href="#acv-terminal"/></svg>智能终端</span><span class="arch-item"><svg><use href="#acv-camera"/></svg>高清IPC</span><span class="arch-item"><svg><use href="#acv-chip"/></svg>AI边缘分析终端</span><span class="arch-item"><svg><use href="#acv-monitor"/></svg>监测设备</span><span class="arch-item"><svg><use href="#acv-sensor"/></svg>传感器</span>
+          </div>
+        </article>
       </div>
       </div>
 
@@ -15010,5 +15141,4 @@ updateHomeScrollState();
 
 
 <div class="light"></div><div data-trae-edit-ui="true"></div></body></html>
-
 
